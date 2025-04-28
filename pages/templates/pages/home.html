@@ -1,6 +1,81 @@
 {% extends 'pages/base.html' %}
-<br><br>
+{% load static %}
+
+{% block title %}Home{% endblock %}
+{% block exrta_css %}<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">{% endblock %}
+
+
 {% block content %}
-	<h1>home</h1>
-{% endblock  %}
+
+<br><br><br>
+<div class="container">
+	<div class="row">
+		<div class="col-md-8">
+			<div class="card card-body">
+				<h4><strong>Garma Timothy Yuomdel</strong></h4>
+				<h5>Junior Software Engineer</h3><br>
+				<p>i'am software engineer specialized in frontend and backend(fullstack) development for complex scalable web apps. i write about software development on my blog. Do you want to know i may help your project? Check out my project portfolio and online resume </p>
+				<div class="card-footer bg-white">
+					<a href="{% url 'project_index' %}" class="btn btn-primary">View Projects</a>
+					<a href="{% url 'project_index' %}" class="btn btn-secondary">View Resume</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-3">
+			<div class="card card-body">
+				<img id="profile-pic" src="{% static 'images/ho.jpg' %}" class="card-img-top" alt="dev">
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="card card-body">
+				<h5>my experience as a developer</h5>
+				<p>fullstack developer at Afridelight</p>
+				<p>I Design, built and manage a food restaurant website as a sole developer. the site support thausand of customer with django for admin panel with customer dashboard that allow user to make multiple orders.</p>
+				<ol class="social-links">
+					<img style="width: 40px;" class="social" src="{% static 'images/github.png' %}" alt="github"></li>
+					<img style="width: 30px;" class="social" src="{% static 'images/facebook.jpeg' %}" alt="fb">
+					<img style="width: 35px;" class="social" src="{% static 'images/instagra.jpeg' %}" alt="inst"></li>
+					<img style="width: 35px;" class="social" src="{% static 'images/linkedin.png' %}" alt="ln"></li>
+					<img style="width: 30px;" class="social" src="{% static 'images/x.png' %}" alt="X"></li>
+				</ol>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="card card-body">
+				<h5>My Skills</h5>
+				<p>python, Django, HTML/CSS, javascript, React, PostgreSQL, GIT, Github, AWS and API such as google map, javascript chart and a whole lot more that i can't possibly mention in one sentence</p>
+			</div>
+		</div>
+	</div>
+</div>
 	
+
+
+
+<hr>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-10 bg-dark">
+			<div class="card card-body">
+				<h1>About Me</h1>
+				<br>
+				<p style="font-size: 1.3rem;">
+					<img style="width: 300px; height: 350px;border-radius: 20%; float: right " src="{% static 'images\TiM.jpg' %}" alt="foto"><br>
+					Hi i am <strong>Timothy</strong>, a passionate fullstack developer with experience in crafting innovative digital solutions. with expertise in both front-end and back-end technologies, I bring ideas to life through clean, efficient, and scalable code. My tech stack includes {python, Django, javascript, React, HTML/CSS,  PostgreSQL, GIT, Github} i am driven by a love  for problem-solving and a commitment  to delivering high-quality products. Let's build something amazing together!</p>
+					
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="card card-body"></div>
+		</div>
+	</div>
+</div>
+
+<br><br><br><br><br><br><br><br><br>
+{% endblock %}

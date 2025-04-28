@@ -1,25 +1,43 @@
 {% extends 'pages/base.html' %}
+{% load static %}
 
 
 {% block content %}
-<h1>Projects</h1>
-<div class="row">
-	{% for project in projects %}
-		<div class="col-md-4">
-			<div class="card mb-2">
-				{% if project.image %}
-					<img class="card-img-top" src="{{ project.image.url }}" alt="">
-				{% endif %}	
-				<div class="card-body">
-					<h5 class="card-title">{{project.title}}</h5>
-					<p class="card-text">{{project.description}}</p>
-					<a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">
-						Read More
-					</a>
-				</div>
-			</div>
-		</div>
-	{% endfor %}
-</div>
+<br><br>
+<section class="py-5">
+    <div class="container">
+        <h1 class="text-center mb-5">My Projects</h1>
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title }}</h5><hr>
+                        <p class="card-text">{{ project.description }}</p>
+                        <div class="mb-3">
+                            {% for tech in project.technology.all %}
+                            <span class="badge bg-secondary me-1">{{ tech.name }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white">
+						<a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">Read More</a>
+                        {% if project.url %}
+                        <a href="{{ project.url }}" class="btn btn-primary me-2" target="_blank">View Live</a>
+                        {% endif %}
+                        {% if project.github_url %}
+                        <a href="{{ project.github_url }}" class="btn btn-dark" target="_blank">GitHub</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+<br><br><br>
+
+
 {% endblock content %}
 	

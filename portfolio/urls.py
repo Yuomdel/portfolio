@@ -24,3 +24,7 @@ urlpatterns = [
     path('', include('pages.urls')),
     path('projects/', include('projects.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = 'portfolio'
+admin.site.index_title = 'Welcome to my fortfolio site'
+admin.site.site_title = 'Portfolio'
